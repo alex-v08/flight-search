@@ -1,0 +1,26 @@
+[Unit]
+Description=Flight Monitor Daemon - Detección de bandas negras
+After=network-online.target graphical-session.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Variables de entorno para Cosmic/Wayland
+Environment="DISPLAY=:0"
+Environment="WAYLAND_DISPLAY=wayland-1"
+Environment="XDG_CURRENT_DESKTOP=COSMIC"
+Environment="XDG_SESSION_TYPE=wayland"
+Environment="XDG_RUNTIME_DIR=/run/user/%U"
+Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus"
+WorkingDirectory=/home/alexv/workspace/ROG/flight-search
+ExecStart=/home/alexv/workspace/ROG/flight-search/venv/bin/python /home/alexv/workspace/ROG/flight-search/flight_monitor_daemon.py
+Restart=on-failure
+RestartSec=30
+
+# Configuración de recursos (bajo impacto en rendimiento)
+Nice=10
+CPUQuota=20%
+MemoryMax=512M
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Flight Search Dashboard
+Comment=Buscador de vuelos con alertas de bandas negras
+Exec=/home/alexv/workspace/ROG/flight-search/dashboard.sh
+Icon=airplane-mode
+Terminal=false
+Categories=Network;Utility;
+StartupNotify=true
+X-GNOME-Autostart-enabled=true

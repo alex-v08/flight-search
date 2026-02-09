@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Flight Monitor
+GenericName=Flight Deals Monitor
+Comment=Monitor de bandas negras en vuelos
+Icon=airplane-mode-symbolic
+Exec=/home/alexv/workspace/ROG/flight-search/venv/bin/python /home/alexv/workspace/ROG/flight-search/flight_monitor_daemon.py
+Terminal=false
+Categories=Network;Utility;
+Keywords=flight;travel;deals;monitor;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
