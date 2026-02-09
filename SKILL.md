@@ -11,8 +11,8 @@ Skill para buscar pasajes de avión usando IA local (Ollama) y búsqueda profund
 pip install requests python-dotenv rich
 
 # Variables de entorno necesarias
-cat /home/alexv/workspace/ROG/flight-search/.env
-# BRAVE_API_KEY=BSApP-v-1YFxsDMCpzj7UwJr43tlTpF
+cat /path/to/flight-search/.env
+# BRAVE_API_KEY=your_api_key_here
 # OLLAMA_URL=http://localhost:11434
 ```
 
@@ -21,7 +21,7 @@ cat /home/alexv/workspace/ROG/flight-search/.env
 ### 1. Búsqueda Simple
 
 ```bash
-cd /home/alexv/workspace/ROG/flight-search
+cd /path/to/flight-search
 ./search.sh -o [ORIGEN] -d [DESTINO] --date [YYYY-MM-DD]
 ```
 
@@ -158,7 +158,7 @@ ollama serve
 
 ```python
 import sys
-sys.path.insert(0, '/home/alexv/workspace/ROG/flight-search')
+sys.path.insert(0, '/path/to/flight-search')
 from flight_search import FlightSearchEngine
 
 engine = FlightSearchEngine()

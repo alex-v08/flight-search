@@ -263,7 +263,6 @@ Los precios mostrados son referencias encontradas mediante búsqueda web. **Siem
 
 ---
 
-**Desarrollado para**: ROG Strix G16 AI Workstation  
-**Optimizado para**: Pop!_OS / Cosmic DE  
+**Optimizado para**: Cosmic DE (System76)  
 **Modelos IA**: Llama 3.1, DeepSeek Coder v2 (via Ollama)  
 **Búsqueda**: Brave Search API

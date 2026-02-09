@@ -48,7 +48,7 @@ MONITORED_ROUTES = [
 ### 3. Instalar como servicio systemd
 
 ```bash
-cd /home/alexv/workspace/ROG/flight-search
+cd /home/$USER/workspace/ROG/flight-search
 
 # Instalar el servicio
 ./monitor.sh install

@@ -19,7 +19,7 @@ which notify-send
 ### 2. Configurar entorno Python
 
 ```bash
-cd /home/alexv/workspace/ROG/flight-search
+cd /path/to/flight-search
 
 # Crear entorno virtual si no existe
 python3 -m venv venv

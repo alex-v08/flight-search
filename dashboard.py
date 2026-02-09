@@ -15,7 +15,7 @@ from pathlib import Path
 import sys
 
 # Añadir path del proyecto
-sys.path.insert(0, "/home/alexv/workspace/ROG/flight-search")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from flight_search import FlightSearchEngine, FlightDeal
 
 

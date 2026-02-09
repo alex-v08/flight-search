@@ -26,6 +26,7 @@ wheels/
 # Environment variables
 .env
 .env.local
+.env.*.local
 
 # IDEs
 .vscode/
@@ -33,17 +34,41 @@ wheels/
 *.swp
 *.swo
 *~
+.project
+.settings/
+.classpath
 
 # OS
 .DS_Store
 Thumbs.db
+*.bak
 
 # Logs
 *.log
+logs/
 
 # Flight Monitor specific
 flight_search_*.md
 *.json.backup
+price_history.json
+state.json
 
-# Config (mantener .env.example)
+# User-specific paths (replace with generic)
+/home/*/
+
+# Config (keep only examples)
 !.env.example
+
+# Generated files
+flight-monitor.service
+*.desktop
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.swp
+*~

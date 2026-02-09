@@ -16,7 +16,7 @@ Widget de escritorio transparente que busca ofertas de vuelos automáticamente y
 ### 1. Ejecutar Dashboard
 
 ```bash
-cd /home/alexv/workspace/ROG/flight-search
+cd /path/to/flight-search
 ./dashboard.sh
 ```
 
@@ -125,7 +125,7 @@ El dashboard tiene transparencia, puedes colocarlo:
 Para crear un atajo de teclado en GNOME/KDE:
 1. Configuración → Atajos de teclado
 2. Agregar nuevo atajo
-3. Comando: `/home/alexv/workspace/ROG/flight-search/dashboard.sh`
+3. Comando: `/path/to/flight-search/dashboard.sh`
 
 ### Widget en Panel/KDE
 

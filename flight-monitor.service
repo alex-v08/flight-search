@@ -12,8 +12,8 @@ Environment="XDG_CURRENT_DESKTOP=COSMIC"
 Environment="XDG_SESSION_TYPE=wayland"
 Environment="XDG_RUNTIME_DIR=/run/user/%U"
 Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus"
-WorkingDirectory=/home/alexv/workspace/ROG/flight-search
-ExecStart=/home/alexv/workspace/ROG/flight-search/venv/bin/python /home/alexv/workspace/ROG/flight-search/flight_monitor_daemon.py
+WorkingDirectory=/home/USER/path/to/flight-search
+ExecStart=/home/USER/path/to/flight-search/venv/bin/python /home/USER/path/to/flight-search/flight_monitor_daemon.py
 Restart=on-failure
 RestartSec=30
 

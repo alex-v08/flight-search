@@ -1,7 +1,8 @@
 #!/bin/bash
 # Launcher para Flight Search Dashboard
 
-cd /home/alexv/workspace/ROG/flight-search
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
 # Activar virtual environment
 if [ -f "venv/bin/activate" ]; then
