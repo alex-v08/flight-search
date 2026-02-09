@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Flight Monitor Daemon - Monitoreo de bandas negras para Wayland Cosmic
+Flight Monitor Daemon - Monitoreo de bandas negativas para Wayland Cosmic
 Servicio de fondo que detecta NUEVAS oportunidades y envía notificaciones nativas
 """
 
@@ -24,7 +24,7 @@ from price_history import PriceHistoryTracker
 STATE_FILE = Path.home() / ".config" / "flight-monitor" / "state.json"
 LOG_FILE = Path.home() / ".config" / "flight-monitor" / "monitor.log"
 CHECK_INTERVAL = 300  # 5 minutos
-ALERT_THRESHOLD = 90  # Score mínimo para banda negra
+ALERT_THRESHOLD = 90  # Score mínimo para banda negativa
 
 
 class FlightMonitor:
@@ -82,7 +82,7 @@ class FlightMonitor:
 
     def send_notification(self, deal: FlightDeal):
         """Envía notificación nativa de Cosmic/Wayland con URL REAL clickable"""
-        title = f"🔥 Banda Negra: {deal.origin} → {deal.destination}"
+        title = f"🔥 Banda Negativa: {deal.origin} → {deal.destination}"
         
         # Mostrar la URL real en la notificación
         url_preview = deal.booking_url[:60] + "..." if len(deal.booking_url) > 60 else deal.booking_url
@@ -212,7 +212,7 @@ class FlightMonitor:
             self.logger.error(f"Error en instalación: {e}")
 
     def check_route(self, route: Dict) -> List[FlightDeal]:
-        """Verifica una ruta y busca bandas negras"""
+        """Verifica una ruta y busca bandas negativas"""
         origin = route['origin']
         destination = route['destination']
         date = (datetime.now() + timedelta(days=route.get('days_ahead', 30))).strftime('%Y-%m-%d')
@@ -225,7 +225,7 @@ class FlightMonitor:
             
             deals = self.engine.search_error_fares(origin, destination, date)
             
-            # Filtrar solo bandas negras
+            # Filtrar solo bandas negativas
             black_friday_deals = [
                 deal for deal in deals 
                 if deal.deal_score >= ALERT_THRESHOLD
@@ -284,7 +284,7 @@ class FlightMonitor:
                     self.logger.info(f"🏆 NUEVO MÍNIMO HISTÓRICO!")
                 
                 self.logger.info(
-                    f"🆕 Nueva banda negra VALIDADA: "
+                    f"🆕 Nueva banda negativa VALIDADA: "
                     f"{deal.airline} | {deal.origin}→{deal.destination} | "
                     f"${deal.price} | Score: {deal.deal_score:.0f}/100 | "
                     f"{deal.booking_url[:50]}..."
@@ -315,7 +315,7 @@ class FlightMonitor:
         
         self.save_state()
         
-        self.logger.info(f"✅ Ciclo completado: {total_new_deals} nuevas bandas negras")
+        self.logger.info(f"✅ Ciclo completado: {total_new_deals} nuevas bandas negativas")
         self.logger.info("=" * 60)
 
     def run_forever(self):

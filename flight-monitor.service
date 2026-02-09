@@ -1,5 +1,5 @@
 [Unit]
-Description=Flight Monitor Daemon - Detección de bandas negras
+Description=Flight Monitor Daemon - Detección de bandas negativas
 After=network-online.target graphical-session.target
 Wants=network-online.target
 

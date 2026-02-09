@@ -1,12 +1,12 @@
 # Flight Search Dashboard 🎛️
 
-Widget de escritorio transparente que busca ofertas de vuelos automáticamente y te alerta cuando encuentra bandas negras.
+Widget de escritorio transparente que busca ofertas de vuelos automáticamente y te alerta cuando encuentra bandas negativas.
 
 ## Características
 
 ✨ **Transparencia**: Ventana semi-transparente (85% opacidad)  
 🔄 **Auto-búsqueda**: Actualiza ofertas cada 5 minutos  
-🔥 **Alertas**: Notificaciones de escritorio para bandas negras  
+🔥 **Alertas**: Notificaciones de escritorio para bandas negativas  
 📌 **Siempre visible**: Se mantiene encima de otras ventanas  
 🖱️ **Arrastrable**: Mueve el widget a donde prefieras  
 🌐 **Links directos**: Click en oferta para abrir URL de reserva
@@ -62,7 +62,7 @@ self.routes = [
 
 Haz clic en **⚙️** y ajusta:
 - **Intervalo de búsqueda**: Cada cuántos minutos busca
-- **Score mínimo para alerta**: Por defecto 90 (bandas negras)
+- **Score mínimo para alerta**: Por defecto 90 (bandas negativas)
 
 ## Notificaciones
 
@@ -159,7 +159,7 @@ def monitor_fares():
                 subprocess.run([
                     'notify-send',
                     '-u', 'critical',
-                    f'BANDA NEGRA: {deal.airline}',
+                    f'BANDA NEGATIVA: {deal.airline}',
                     f'{deal.currency} {deal.price:,.0f}'
                 ])
         

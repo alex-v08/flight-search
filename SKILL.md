@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Skill para buscar pasajes de avión usando IA local (Ollama) y búsqueda profunda con Brave Search. Detecta bandas negras (errores de precio), analiza conexiones y compara reputación de aerolíneas.
+Skill para buscar pasajes de avión usando IA local (Ollama) y búsqueda profunda con Brave Search. Detecta bandas negativas (errores de precio), analiza conexiones y compara reputación de aerolíneas.
 
 ## Requisitos
 
@@ -25,7 +25,7 @@ cd /path/to/flight-search
 ./search.sh -o [ORIGEN] -d [DESTINO] --date [YYYY-MM-DD]
 ```
 
-### 2. Búsqueda de Bandas Negras
+### 2. Búsqueda de Bandas Negativas
 
 ```bash
 ./search.sh -o MDZ -d SLA --date 2026-04-12 --error-fares-only
@@ -168,7 +168,7 @@ engine.display_results(deals)
 
 ## Notas Importantes
 
-⚠️ **Disclaimer**: Los precios mostrados son referencias encontradas en búsqueda web. Siempre verificar en el sitio oficial antes de comprar. Las "bandas negras" pueden cancelarse.
+⚠️ **Disclaimer**: Los precios mostrados son referencias encontradas en búsqueda web. Siempre verificar en el sitio oficial antes de comprar. Las "bandas negativas" pueden cancelarse.
 
 ✅ **Verificar siempre**:
 1. Fechas disponibles

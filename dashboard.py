@@ -365,11 +365,11 @@ class FlightDashboard:
             note.pack(fill=tk.X, padx=5, pady=2)
 
     def show_alert(self, deal: FlightDeal):
-        """Mostrar alerta de banda negra"""
+        """Mostrar alerta de banda negativa"""
         try:
             import subprocess
 
-            title = f"🔥 BANDA NEGRA DETECTADA"
+            title = f"🔥 BANDA NEGATIVA DETECTADA"
             message = f"{deal.airline}: {deal.currency} {deal.price:,.0f}\n{deal.origin} → {deal.destination}"
 
             # Notificación de escritorio Linux
@@ -460,7 +460,7 @@ class FlightDashboard:
             for i, deal in enumerate(deals[:5]):
                 self.display_deal(deal, i)
 
-                # Alertar si es banda negra
+                # Alertar si es banda negativa
                 if deal.deal_score and deal.deal_score >= self.alert_threshold:
                     self.show_alert(deal)
 

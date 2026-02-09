@@ -54,7 +54,7 @@ Deberías ver:
 
 Deberías ver una notificación en la esquina superior derecha de Cosmic con:
 ```
-✈️ Test de Banda Negra
+✈️ Test de Banda Negativa
 💰 ARS 145,000 | Iberia
 📅 2026-03-15
 ⭐ Score: 95/100
@@ -125,24 +125,24 @@ MONITORED_ROUTES = [
 
 El monitor **NO te va a spamear** con las mismas ofertas. Sistema inteligente:
 
-1. **Primera ejecución**: Detecta todas las bandas negras actuales y las guarda en memoria
-2. **Ejecuciones siguientes**: Solo notifica si aparece una banda negra NUEVA
+1. **Primera ejecución**: Detecta todas las bandas negativas actuales y las guarda en memoria
+2. **Ejecuciones siguientes**: Solo notifica si aparece una banda negativa NUEVA
 3. **Persistencia**: El estado se guarda en `~/.config/flight-monitor/state.json`
 4. **Reinicio**: Si borras el archivo de estado, volverá a notificar todas (útil para testing)
 
 ### Ejemplo de Flujo
 
 ```
-T=0min:   Encuentra 2 bandas negras (EZE→MAD, MDZ→SLA)
+T=0min:   Encuentra 2 bandas negativas (EZE→MAD, MDZ→SLA)
           → Guarda en memoria, NO notifica (son conocidas)
 
-T=5min:   Encuentra las mismas 2 bandas negras
+T=5min:   Encuentra las mismas 2 bandas negativas
           → NO notifica (ya existían)
 
-T=10min:  Encuentra 3 bandas negras (las 2 anteriores + EZE→BCN nueva)
+T=10min:  Encuentra 3 bandas negativas (las 2 anteriores + EZE→BCN nueva)
           → 🔔 NOTIFICA solo la nueva: EZE→BCN
 
-T=15min:  La banda negra EZE→MAD desapareció, quedan 2
+T=15min:  La banda negativa EZE→MAD desapareció, quedan 2
           → NO notifica (desapariciones no generan alertas)
 
 T=20min:  Vuelve a aparecer EZE→MAD
@@ -283,8 +283,8 @@ cat ~/.config/flight-monitor/state.json | jq .
 # Últimas 50 líneas
 tail -n 50 ~/.config/flight-monitor/monitor.log
 
-# Buscar bandas negras detectadas
-grep "Nueva banda negra" ~/.config/flight-monitor/monitor.log
+# Buscar bandas negativas detectadas
+grep "Nueva banda negativa" ~/.config/flight-monitor/monitor.log
 
 # Buscar notificaciones enviadas
 grep "Notificación enviada" ~/.config/flight-monitor/monitor.log
@@ -302,7 +302,7 @@ El estado (deals conocidos) se preserva entre reinicios.
 
 ## 🗑️ Resetear Estado
 
-Si quieres que vuelva a notificar todas las bandas negras:
+Si quieres que vuelva a notificar todas las bandas negativas:
 
 ```bash
 # Borrar estado
@@ -352,4 +352,4 @@ Esto mostrará toda la salida en la terminal para diagnosticar problemas.
 5. ✅ Habilitar autostart
 6. ✅ Verificar que funciona
 
-¡Listo! Ahora recibirás notificaciones automáticas cuando aparezcan nuevas bandas negras en tus rutas favoritas. 🎉
+¡Listo! Ahora recibirás notificaciones automáticas cuando aparezcan nuevas bandas negativas en tus rutas favoritas. 🎉

@@ -93,7 +93,7 @@ if price < 200 and deal_data.get("currency") == "USD":
 
 ## 🎯 Comportamiento Actual
 
-### Al detectar banda negra:
+### Al detectar banda negativa:
 1. ✅ Valida que el precio sea realista (>= USD 200)
 2. ✅ Genera URL completa con todos los parámetros
 3. ✅ Muestra notificación en Cosmic
@@ -103,7 +103,7 @@ if price < 200 and deal_data.get("currency") == "USD":
 ### Ejemplo de flujo:
 ```
 Notificación:
-🔥 Banda Negra: EZE → MAD
+🔥 Banda Negativa: EZE → MAD
 💰 USD 476 | Iberia
 📅 2026-03-15
 ⭐ Score: 90/100

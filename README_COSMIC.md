@@ -39,4 +39,4 @@ Ver **[COSMIC_SETUP.md](COSMIC_SETUP.md)** para guía detallada.
 ./monitor.sh check     # Diagnosticar problemas
 ```
 
-¡Disfruta de las bandas negras! ✈️
+¡Disfruta de las bandas negativas! ✈️

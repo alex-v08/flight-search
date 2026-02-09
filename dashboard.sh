@@ -19,7 +19,7 @@ fi
 echo "🚀 Iniciando Flight Search Dashboard..."
 echo "💡 El dashboard es semi-transparente y se mantiene siempre visible"
 echo "🔍 Buscará ofertas automáticamente cada 5 minutos"
-echo "🔥 Te alertará cuando encuentre bandas negras"
+echo "🔥 Te alertará cuando encuentre bandas negativas"
 echo ""
 echo "Controles:"
 echo "  - Arrastrar para mover"

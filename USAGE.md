@@ -40,7 +40,7 @@ if not deal.booking_url.startswith('http'):
     ⚠️ Deal descartado sin URL válida
 
 # Log detallado
-🆕 Nueva banda negra VALIDADA:
+🆕 Nueva banda negativa VALIDADA:
    Iberia | EZE→MAD | $476 | https://www.expedia.com.ar/...
 ```
 
@@ -78,7 +78,7 @@ Monitor valida nuevamente
 
 ### Rutas Internacionales (Argentina - Europa)
 
-| Ruta | Normal | Buena Oferta | Banda Negra |
+| Ruta | Normal | Buena Oferta | Banda Negativa |
 |------|--------|--------------|-------------|
 | EZE → MAD | USD 600-900 | USD 400-500 | USD 300-400 |
 | EZE → BCN | USD 700-1000 | USD 450-600 | USD 350-450 |
@@ -87,7 +87,7 @@ Monitor valida nuevamente
 
 ### Rutas Domésticas (Argentina)
 
-| Ruta | Normal | Buena Oferta | Banda Negra |
+| Ruta | Normal | Buena Oferta | Banda Negativa |
 |------|--------|--------------|-------------|
 | MDZ → SLA | USD 120-200 | USD 70-100 | USD 50-70 |
 | EZE → COR | USD 80-150 | USD 50-70 | USD 30-50 |
@@ -128,7 +128,7 @@ Sistema valida:
 ✓ Deal nuevo
 
 Notificación:
-🔥 Banda Negra: EZE → MAD
+🔥 Banda Negativa: EZE → MAD
 💰 USD 476 | Expedia
 🌐 https://www.expedia.com.ar/Flights-Search?trip...
 Click para abrir
@@ -160,8 +160,8 @@ journalctl --user -u flight-monitor.service | grep "URL real"
 
 ```
 ✓ Deal validado: Iberia $476 - https://www.expedia.com.ar/...
-🆕 Nueva banda negra VALIDADA: Iberia | EZE→MAD | $476 | https://www.expedia.com...
-✅ Notificación enviada: 🔥 Banda Negra: EZE → MAD
+🆕 Nueva banda negativa VALIDADA: Iberia | EZE→MAD | $476 | https://www.expedia.com...
+✅ Notificación enviada: 🔥 Banda Negativa: EZE → MAD
 🔗 URL real: https://www.expedia.com.ar/Flights-Search?trip=oneway&leg1=from:EZE,to:MAD
 🌐 Abriendo URL: https://www.expedia.com.ar/...
 ```
@@ -217,7 +217,7 @@ rm ~/.config/flight-monitor/state.json
 
 ### Disponibilidad de Ofertas
 
-Las bandas negras pueden desaparecer rápidamente:
+Las bandas negativas pueden desaparecer rápidamente:
 - ⚡ Algunos errores de precio duran minutos
 - 🕐 Otros pueden durar horas o días
 - 📱 Actúa rápido cuando recibas la notificación

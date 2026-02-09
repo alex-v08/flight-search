@@ -11,7 +11,7 @@ RESULT=$(notify-send \
   --app-name="Flight Monitor Test" \
   --action="default=Abrir en navegador" \
   --action="dismiss=Cerrar" \
-  "✈️ Test Banda Negra Clickable" \
+  "✈️ Test Banda Negativa Clickable" \
   "💰 ARS 145,000 | Iberia
 📅 2026-03-15
 ⭐ Score: 95/100

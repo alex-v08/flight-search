@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Flight Search Dashboard - Overlay transparente de escritorio
-Muestra bandas negras (error fares) desde Mendoza a cualquier destino
+Muestra bandas negativas (error fares) desde Mendoza a cualquier destino
 Fondo transparente real, texto blanco, siempre en background
 """
 
@@ -96,7 +96,7 @@ class TransparentDashboard:
         
         self.canvas.create_text(
             250, 40,
-            text="Bandas Negras desde Mendoza (MDZ)",
+            text="Bandas Negativas desde Mendoza (MDZ)",
             font=('Arial', 9),
             fill='#aaaaaa',
             anchor='center'
@@ -239,7 +239,7 @@ class TransparentDashboard:
         
         # Color según score
         if deal.deal_score and deal.deal_score >= 90:
-            border_color = '#ff3333'  # Rojo para bandas negras
+            border_color = '#ff3333'  # Rojo para bandas negativas
             bg_color = '#2d1a1a'
         elif deal.deal_score and deal.deal_score >= 70:
             border_color = '#ffaa33'  # Naranja para buenas ofertas
@@ -345,7 +345,7 @@ class TransparentDashboard:
             card.configure(cursor='hand2')
             
     def show_alert(self, deal: FlightDeal):
-        """Mostrar notificación de banda negra"""
+        """Mostrar notificación de banda negativa"""
         try:
             price_text = f"{deal.currency} {deal.price:,.0f}" if deal.price else "Error de precio"
             route_text = f"{deal.origin or 'MDZ'} → {deal.destination or '?'}"
@@ -355,7 +355,7 @@ class TransparentDashboard:
                 '-u', 'critical',
                 '-t', '15000',
                 '-i', 'airplane-mode',
-                f'🔥 BANDA NEGRA: {deal.airline or "Desconocida"}',
+                f'🔥 BANDA NEGATIVA: {deal.airline or "Desconocida"}',
                 f'{price_text}\n{route_text}\n¡Click en el dashboard para reservar!'
             ])
         except Exception as e:
@@ -388,12 +388,12 @@ class TransparentDashboard:
         self.root.after(0, lambda: self.canvas.itemconfig(self.status_text, text=text, fill=color))
         
     def search_all_destinations(self):
-        """Buscar bandas negras desde MDZ a múltiples destinos"""
+        """Buscar bandas negativas desde MDZ a múltiples destinos"""
         if self.is_searching:
             return
             
         self.is_searching = True
-        self.update_status("🔄 Buscando bandas negras desde MDZ...", '#4a9eff')
+        self.update_status("🔄 Buscando bandas negativas desde MDZ...", '#4a9eff')
         
         try:
             if not self.engine:
@@ -411,7 +411,7 @@ class TransparentDashboard:
                 try:
                     deals = self.engine.search_error_fares('MDZ', dest, date)
                     
-                    # Filtrar solo bandas negras (score >= 85)
+                    # Filtrar solo bandas negativas (score >= 85)
                     error_fares = [d for d in deals if d.deal_score and d.deal_score >= 85]
                     all_new_deals.extend(error_fares)
                     
@@ -441,7 +441,7 @@ class TransparentDashboard:
                 # Mantener solo top 20
                 self.all_deals = self.all_deals[:20]
                 
-                # Alertar sobre nuevas bandas negras
+                # Alertar sobre nuevas bandas negativas
                 for deal in all_new_deals:
                     if deal.deal_score and deal.deal_score >= 90:
                         self.show_alert(deal)
@@ -464,11 +464,11 @@ class TransparentDashboard:
         self.canvas.itemconfig(self.counter_text, text=str(len(self.all_deals)))
         
         if not self.all_deals:
-            self.update_status("❌ No se encontraron bandas negras", '#ffaa66')
+            self.update_status("❌ No se encontraron bandas negativas", '#ffaa66')
             
             label = tk.Label(
                 self.deals_inner,
-                text="No hay bandas negras activas\nBuscando cada 10 minutos...",
+                text="No hay bandas negativas activas\nBuscando cada 10 minutos...",
                 font=('Arial', 10),
                 fg='#666666',
                 bg='gray15',
@@ -477,7 +477,7 @@ class TransparentDashboard:
             label.pack(pady=50)
         else:
             bandas_negras = len([d for d in self.all_deals if d.deal_score and d.deal_score >= 90])
-            self.update_status(f"✅ {bandas_negras} bandas negras | {len(self.all_deals)} ofertas totales", '#4aff4a')
+            self.update_status(f"✅ {bandas_negras} bandas negativas | {len(self.all_deals)} ofertas totales", '#4aff4a')
             
             # Mostrar ofertas
             for i, deal in enumerate(self.all_deals[:15]):  # Top 15
@@ -503,7 +503,7 @@ class TransparentDashboard:
 if __name__ == "__main__":
     print("🚀 Iniciando Flight Search Overlay...")
     print("💡 Fondo transparente - Texto blanco")
-    print("🔍 Buscando bandas negras desde MDZ a cualquier destino")
+    print("🔍 Buscando bandas negativas desde MDZ a cualquier destino")
     print("⏱️  Actualización automática cada 10 minutos")
     print("")
     print("Controles:")

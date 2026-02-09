@@ -1,6 +1,6 @@
-# Flight Monitor Daemon - Monitor de Bandas Negras
+# Flight Monitor Daemon - Monitor de Bandas Negativas
 
-Sistema de monitoreo continuo para detectar errores de precio en vuelos (bandas negras) con notificaciones nativas de Wayland/Cosmic.
+Sistema de monitoreo continuo para detectar errores de precio en vuelos (bandas negativas) con notificaciones nativas de Wayland/Cosmic.
 
 ## 🎯 Características
 
@@ -109,7 +109,7 @@ Las notificaciones incluyen:
 
 **Ejemplo:**
 ```
-🔥 Banda Negra: EZE → MAD
+🔥 Banda Negativa: EZE → MAD
 💰 ARS 145,000 | Iberia
 📅 2026-03-15
 ⭐ Score: 95/100
@@ -126,7 +126,7 @@ Editar `flight_monitor_daemon.py` línea 26:
 CHECK_INTERVAL = 300  # Segundos (300 = 5 minutos)
 ```
 
-### Cambiar umbral de banda negra
+### Cambiar umbral de banda negativa
 
 Editar línea 27:
 
@@ -178,7 +178,7 @@ Verifica:
 
 ```bash
 notify-send --urgency=critical --icon=airplane-mode \
-  "🔥 Banda Negra: Test" \
+  "🔥 Banda Negativa: Test" \
   "💰 Esto es una prueba"
 ```
 
@@ -219,7 +219,7 @@ Después de editar rutas en `flight_monitor_daemon.py`:
 
 ## 🎨 Integración con Cosmic
 
-El daemon es invisible en el escritorio, solo muestra notificaciones cuando hay nuevas bandas negras. Para ver el widget visual (dashboard anterior):
+El daemon es invisible en el escritorio, solo muestra notificaciones cuando hay nuevas bandas negativas. Para ver el widget visual (dashboard anterior):
 
 ```bash
 ./dashboard.sh  # Dashboard gráfico en ventana

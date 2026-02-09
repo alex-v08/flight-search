@@ -22,7 +22,7 @@ gdbus call --session \
   "Flight Monitor" \
   0 \
   "airplane-mode-symbolic" \
-  "🔥 Banda Negra: EZE → MAD" \
+  "🔥 Banda Negativa: EZE → MAD" \
   "💰 ARS 145,000 | Iberia\n📅 2026-03-15\n⭐ Score: 95/100\n\n🌐 Click para ver ofertas" \
   "['default', 'Abrir navegador', 'dismiss', 'Cerrar']" \
   "{'urgency': <byte 2>, 'x-kde-urls': <'$TEST_URL'>}" \
